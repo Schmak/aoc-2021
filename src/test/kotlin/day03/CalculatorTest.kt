@@ -15,6 +15,16 @@ internal class CalculatorTest {
         assertThat(calculator.epsilon).isEqualTo(9)
     }
 
+    @Test
+    fun oxygen() {
+        assertThat(calculator.oxygen).isEqualTo(23)
+    }
+
+    @Test
+    fun co2() {
+        assertThat(calculator.co2).isEqualTo(10)
+    }
+
     companion object {
         private val calculator = Calculator(input)
     }
