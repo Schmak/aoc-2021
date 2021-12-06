@@ -11,6 +11,12 @@ internal class Day06Test {
         assertThat(actual).isEqualTo(5934)
     }
 
+    @Test
+    fun part2() {
+        val actual = part2(input)
+        assertThat(actual).isEqualTo(26984457539)
+    }
+
     companion object {
         private val input = parseInput(readFile("06", type = "test"))
     }
