@@ -8,9 +8,14 @@ fun part1(segments: List<Segment>): Int = Field().apply {
         .forEach(::addSegment)
 }.overlapped
 
+fun part2(segments: List<Segment>): Int = Field().apply {
+    segments.forEach(::addSegment)
+}.overlapped
+
 fun parseInput(input: List<String>): List<Segment> = input.map { Segment.parse(it) }
 
 fun main() {
     val input = parseInput(readFile("05"))
     println(part1(input))
+    println(part2(input))
 }
