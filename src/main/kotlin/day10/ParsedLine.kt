@@ -5,6 +5,7 @@ import java.util.*
 class ParsedLine(input: String) {
     private val stack = Stack<Char>()
     val firstIncorrectChar: Char? = getFirstIncorrectChar(input, stack)
+    val fixedLine = stack.reversed().joinToString("") { brackets.getValue(it).toString() }
 
     companion object {
         private val brackets = mapOf(
