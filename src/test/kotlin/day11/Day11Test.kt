@@ -7,11 +7,17 @@ import utils.readFile
 internal class Day11Test {
     @Test
     fun part1() {
-        val actual = part1(input)
+        val actual = part1(parseInput(input))
         assertThat(actual).isEqualTo(1656)
     }
 
+    @Test
+    fun part2() {
+        val actual = part2(parseInput(input))
+        assertThat(actual).isEqualTo(195)
+    }
+
     companion object {
-        private val input = parseInput(readFile("11", type = "test"))
+        private val input = readFile("11", type = "test")
     }
 }

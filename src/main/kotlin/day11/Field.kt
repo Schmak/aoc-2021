@@ -18,6 +18,8 @@ data class Field(
         return total
     }
 
+    fun isZero() = data.all { list -> list.all { it == 0 } }
+
     private fun increase(x: Int, y: Int) {
         when {
             data[y][x] == 10 -> return
