@@ -12,5 +12,6 @@ val assertjVersion by extra("3.21.0")
 dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api:$jUnitVersion")
     testImplementation("org.junit.jupiter:junit-jupiter-engine:$jUnitVersion")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:$jUnitVersion")
     testImplementation("org.assertj:assertj-core:$assertjVersion")
 }
