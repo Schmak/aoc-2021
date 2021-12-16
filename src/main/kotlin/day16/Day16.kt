@@ -4,6 +4,8 @@ import utils.readFile
 
 fun part1(packet: Packet): Int = packet.versionSum
 
+fun part2(packet: Packet): Long = packet.value
+
 fun parseInput(input: List<String>): Packet =
     Packet.parse(
         input.first()
@@ -25,4 +27,5 @@ private val Packet.versionSum: Int
 fun main() {
     val input = parseInput(readFile("16"))
     println(part1(input))
+    println(part2(input))
 }
