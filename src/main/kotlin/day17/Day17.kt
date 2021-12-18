@@ -7,6 +7,9 @@ private val regex = """target area: x=(-?\d+)\.\.(-?\d+), y=(-?\d+)\.\.(-?\d+)""
 fun part1(target: Target): Int =
     simulateAll(target).maxOrNull()!!
 
+fun part2(target: Target): Int =
+    simulateAll(target).count()
+
 private fun simulateAll(target: Target) =
     (0..target.x.last).asSequence().flatMap { vx ->
         (target.y.first..-target.y.first).asSequence().map { vy ->
@@ -51,4 +54,5 @@ private fun simulate(startVx: Int, startVy: Int, target: Target): Int? {
 fun main() {
     val input = parseInput(readFile("17"))
     println(part1(input))
+    println(part2(input))
 }
