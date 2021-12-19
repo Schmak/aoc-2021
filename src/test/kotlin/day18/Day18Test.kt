@@ -16,6 +16,12 @@ internal class Day18Test {
         assertThat(actual).isEqualTo(4140)
     }
 
+    @Test
+    fun part2() {
+        val actual = part2(sumCases().last().numbers)
+        assertThat(actual).isEqualTo(3993)
+    }
+
     @ParameterizedTest
     @MethodSource("explodeCases")
     fun explode(case: ExplodeTestCase) {
