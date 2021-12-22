@@ -12,6 +12,12 @@ internal class Day19Test {
     }
 
     @Test
+    fun part2() {
+        val actual = part2(input)
+        assertThat(actual).isEqualTo(3621)
+    }
+
+    @Test
     fun orientations() {
         val actual = scanner.oriented.toList()
         assertThat(actual).containsExactlyInAnyOrder(

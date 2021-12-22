@@ -10,7 +10,7 @@ data class Scanner(
             Scanner(beacons = this.beacons.map { (matrix * it.toMatrix()).toVector() }.toSet())
         }
 
-    fun merge(other: Scanner): Scanner? {
+    fun merge(other: Scanner): Pair<Scanner, Vector>? {
         other.oriented.forEach { secondScanner ->
             beacons.forEach { firstBeacon ->
                 secondScanner.beacons.forEach { secondBeacon ->
@@ -18,7 +18,7 @@ data class Scanner(
                     val newBeacons = secondScanner.shift(shift).beacons
                     val total = newBeacons.intersect(beacons).size
                     if (total >= 12) {
-                        return Scanner(newBeacons + beacons)
+                        return Scanner(newBeacons + beacons) to shift
                     }
                 }
             }

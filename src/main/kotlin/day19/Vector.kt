@@ -1,5 +1,7 @@
 package day19
 
+import kotlin.math.abs
+
 data class Vector(
     val x: Int,
     val y: Int,
@@ -18,6 +20,9 @@ data class Vector(
         y = y + other.y,
         z = z + other.z,
     )
+
+    fun distanceTo(other: Vector) =
+        abs(x - other.x) + abs(y - other.y) + abs(z - other.z)
 
     companion object {
         fun parse(line: String): Vector =
