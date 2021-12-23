@@ -2,11 +2,17 @@ package day20
 
 import utils.readFile
 
-fun part1(input: Input): Int =
-    input.image
-        .transform(input.lookupTable)
-        .transform(input.lookupTable)
-        .data.sumOf { row -> row.count { it == '#' } }
+fun part1(input: Input): Int = solve(input, 2)
+
+fun part2(input: Input): Int = solve(input, 50)
+
+private fun solve(input: Input, iterations: Int): Int {
+    var image = input.image
+    repeat(iterations) {
+        image = image.transform(input.lookupTable)
+    }
+    return image.data.sumOf { row -> row.count { it == '#' } }
+}
 
 fun parseInput(input: List<String>) =
     Input(
@@ -17,4 +23,5 @@ fun parseInput(input: List<String>) =
 fun main() {
     val input = parseInput(readFile("20"))
     println(part1(input))
+    println(part2(input))
 }
